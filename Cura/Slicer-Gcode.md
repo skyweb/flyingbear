@@ -1,0 +1,32 @@
+## Start G-Code
+==========================================
+M220 S100 ;reset feedrate
+M221 S100 ;reset flowrate
+G90 ;use absolute coordinates
+M82 ;absolute extrusion mode
+G28 ;home
+G1 Z2 F1500 ;raise z
+G92 E0 ;reset extruder
+
+G1 X75 Y5 F5000 ;start position
+G1 Z0.28 F1500 ;lower z
+G1 E4 F500 ;prime the filament
+G1 X180 E10 F500 ;1st line
+G1 Y5.4 F5000
+G1 X75 E20 F500 ;2nd line
+G1 Z2 F1500 ;raise z
+G92 E0 ;reset extruder
+
+## End G-Code
+==========================================
+G91 ;use relative coordinates
+G1 E-4 F1500 ;retract the filament
+G1 X5 Y5 Z0.2 F5000 ;wipe
+G1 Z5 F1500 ;raise z
+G90 ;use absolute coordinates
+G1 X10 Y{machine_depth} F5000 ;park print head
+
+M107 ;turn off fan
+M104 S0 ;turn off hotend
+M140 S0 ;turn off heatbed
+M84 ;disable motors
