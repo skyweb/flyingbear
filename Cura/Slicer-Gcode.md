@@ -1,6 +1,6 @@
 ## Start G-Code
 
-```console
+```bash
 M220 S100 ;Reset Feedrate
 M221 S100 ;Reset Flowrate
 ;{material_print_temperature} {material_bed_temperature}
@@ -24,7 +24,7 @@ G1 Z2.0 F3000 ;Move Z Axis up
 
 ## End G-Code
 
-```console
+```bash
 G91 ;Relative positioning
 G1 E-5 F2700 ;Retract the filament
 G1 E-5 Z0.2 F2400 ;Retract and raise Z
