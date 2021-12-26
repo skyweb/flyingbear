@@ -1,5 +1,6 @@
 ## Start G-Code
-==========================================
+
+```bash
 M220 S100 ;reset feedrate
 M221 S100 ;reset flowrate
 G90 ;use absolute coordinates
@@ -16,9 +17,11 @@ G1 Y5.4 F5000
 G1 X75 E20 F500 ;2nd line
 G1 Z2 F1500 ;raise z
 G92 E0 ;reset extruder
+```
 
 ## End G-Code
-==========================================
+
+```bash
 G91 ;use relative coordinates
 G1 E-4 F1500 ;retract the filament
 G1 X5 Y5 Z0.2 F5000 ;wipe
@@ -30,3 +33,4 @@ M107 ;turn off fan
 M104 S0 ;turn off hotend
 M140 S0 ;turn off heatbed
 M84 ;disable motors
+```
